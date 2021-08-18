@@ -1,0 +1,49 @@
+package main
+
+import "fmt"
+
+type vehicle struct {
+	color    string
+	seats    int
+	maxSpeed int
+}
+
+type car struct {
+	vehicle
+	wheels int
+	doors  int
+}
+
+type plane struct {
+	vehicle
+	jet bool
+}
+
+type boat struct {
+	vehicle
+	length int
+}
+
+func main() {
+	car1, car2, car3 := car{}, car{}, car{}
+	cars := []car{car1, car2, car3}
+
+	for key, value := range cars {
+		fmt.Println(key, "-", value)
+	}
+
+	boeing1, boeing2, boeing3 := plane{}, plane{}, plane{}
+	planes := []plane{boeing1, boeing2, boeing3}
+
+	for key, value := range planes {
+		fmt.Println(key, "-", value)
+	}
+
+	boat1, boat2, boat3 := boat{}, boat{}, boat{}
+	boats := []boat{boat1, boat2, boat3}
+
+	for key, value := range boats {
+		fmt.Println(key, "-", value)
+	}
+
+}
